@@ -9,8 +9,8 @@
 	<meta content="" name="Online Food Order Processing Website for Greenview Restaurant Nairobi">
 
 	<!-- Favicons -->
-	<link href="img/logo/mgfoodhavenlogo2.jpg" rel="icon">
-	<link href="img/logo/mgfoodhavenlogo2.jpg" rel="apple-touch-icon">
+	<link href="img/logo/gvbg3.png" rel="icon">
+	<link href="img/logo/gvbg3.png" rel="apple-touch-icon">
 
 	<!-- Google Fonts -->
 	<link href="css/fonts.css" rel="stylesheet">
