@@ -13,8 +13,8 @@
 	<title>GreenView Hotel - Staff</title>
 
 	<!-- Favicons -->
-	<link href="../img/logo/mgfoodhavenlogo2.jpg" rel="icon">
-	<link href="../img/logo/mgfoodhavenlogo2.jpg" rel="apple-touch-icon">
+	<link href="../img/logo/gvbg3.png" rel="icon">
+	<link href="../img/logo/gvbg3.png" rel="apple-touch-icon">
 
 	<!-- Custom fonts for this template-->
 	<!-- <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->

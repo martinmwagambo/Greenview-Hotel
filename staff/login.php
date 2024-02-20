@@ -26,7 +26,7 @@
 <body>
 	<form class="form-signin needs-validation" method="POST" action="login" novalidate>
 		<div class="text-center">
-			<img class="mb-4" src="../img/logo/mgfoodhavenlogo2.jpg" alt="" width="72" height="72">
+			<img class="mb-4" src="../img/logo/gvbg3.png" alt="" width="120" height="120">
 			<h1 class="h3 mb-3 font-weight-normal">Sign in - Staff</h1>
 			<?php $staff->login(); ?>
 		</div>
