@@ -57,6 +57,8 @@ isset($_SESSION['CUSTOMER']) ? redirect("index") : 0;
 					})();
 				</script>
 
+
+
 				<div class="login100-more" style="background-image: url('img/logo/gvbg2.png');">
 					<div id="header">
 						<div id="logo" class="pull-left">
