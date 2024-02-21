@@ -12,7 +12,7 @@ isset($_SESSION['CUSTOMER']) ? redirect("index") : 0;
 	<!-- Google Fonts -->
 	<link rel="stylesheet" href="css/fonts.css">
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="img/logo/mgfoodhavenlogo2.jpg" />
+	<link rel="icon" type="image/png" href="img/logo/gvbg3.png" />
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -57,7 +57,7 @@ isset($_SESSION['CUSTOMER']) ? redirect("index") : 0;
 					})();
 				</script>
 
-				<div class="login100-more" style="background-image: url('img/logo/gvbg3.png');">
+				<div class="login100-more" style="background-image: url('img/logo/gvbg2.png');">
 					<div id="header">
 						<div id="logo" class="pull-left">
 							<h1><a href="index#intro" class="scrollto">Greenview Hotel</a></h1>
