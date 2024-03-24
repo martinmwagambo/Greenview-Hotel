@@ -304,9 +304,9 @@ class customer
 		$_SERVER['SERVER_PORT'] == 80 ? $port = "http://" : $port = "https://";
 
 		$message = $port . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?key=' . base64_encode($verify_key) . '&s=2&email=' . base64_encode($email);
-		$subject = 'GreenView Hotel - Email verification';
+		$subject = 'Mansoor Cafe - Email verification';
 		// $mail->AddReplyTo($reply_to, $fname);
-		$mail->setFrom($mail->Username, 'GreenView Hotel'); // Set the sender of the message.
+		$mail->setFrom($mail->Username, 'Mansoor Cafe'); // Set the sender of the message.
 		$mail->addAddress($email, $name); // Set the recipient of the message.
 		// $mail->AddCC($cc, 'Kaushik - Website Form');	//CC email
 		$mail->Subject = $subject; // The subject of the message.
@@ -1172,9 +1172,9 @@ class customer
 
 		$message = "Hey " . $cust_name . ", Your order has been placed!\nORDER ID: " . $order_id . "\nTOTAL AMOUNT: " . $amount . "\nPAYMENT MODE: CASH ON DELIVERY\n";
 
-		$subject = 'GreenView Hotel - Order placed';
+		$subject = 'Mansoor Cafe - Order placed';
 		// $mail->AddReplyTo($reply_to, $fname);
-		$mail->setFrom($mail->Username, 'GreenView Hotel'); // Set the sender of the message.
+		$mail->setFrom($mail->Username, 'Mansoor Cafe'); // Set the sender of the message.
 		$mail->addAddress($email, $name); // Set the recipient of the message.
 		// $mail->AddCC($cc, 'Kaushik - Website Form');	//CC email
 		$mail->Subject = $subject; // The subject of the message.
@@ -1215,9 +1215,9 @@ class customer
 
 		$message = "Hey " . $cust_name . ", Your order has been placed!\nORDER ID: " . $order_id . "\nTOTAL AMOUNT: " . $amount . "\nPayment Mode: " . $payment_mode . "\nBank Transaction ID: " . $bank_trans_id . "\n";
 
-		$subject = 'GreenView Hotel - Order placed';
+		$subject = 'Mansoor Cafe - Order placed';
 		// $mail->AddReplyTo($reply_to, $fname);
-		$mail->setFrom($mail->Username, 'GreenView Hotel'); // Set the sender of the message.
+		$mail->setFrom($mail->Username, 'Mansoor Cafe'); // Set the sender of the message.
 		$mail->addAddress($email, $name); // Set the recipient of the message.
 		// $mail->AddCC($cc, 'Kaushik - Website Form');	//CC email
 		$mail->Subject = $subject; // The subject of the message.
@@ -1327,7 +1327,7 @@ class customer
 		$mail->SMTPAuth = true; // Whether you need to login. This is almost always required.
 		$mail->Username = $config['user']; // Your Gmail address.
 		$mail->Password = $config['pass']; // Your Gmail login password or App Specific Password.
-		$mail->setFrom($mail->Username, 'GreenView Hotel'); // Set the sender of the message.
+		$mail->setFrom($mail->Username, 'Mansoor Cafe'); // Set the sender of the message.
 		$mail->addAddress($receiver_email, $receiver_name); // Set the recipient of the message.
 		$mail->Subject = $subject; // The subject of the message.
 		$mail->Body = $message; // Set a plain text body.
@@ -1356,7 +1356,7 @@ class customer
 			}
 			if ($this->flag === 1) {
 				$name = $first_name . " " . $last_name;
-				$subject = "GreenView Hotel - Forgot Password";
+				$subject = "Mansoor Cafe - Forgot Password";
 				$message = "Click on the link below to change your password. This link expires in 5 minutes. \n";
 				if ($_SERVER['SERVER_PORT'] == 80) {
 					$host = "http://";

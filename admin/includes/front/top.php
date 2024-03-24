@@ -10,11 +10,11 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>GreenView Hotel - Admin</title>
+  <title>Mansoor Cafe - Admin</title>
 
     <!-- Favicons -->
-  <link href="../img/logo/gvbg3.png" rel="icon">
-  <link href="../img/logo/gvbg3.png" rel="apple-touch-icon">
+  <link href="../img/favicon.png" rel="icon">
+  <link href="../img/favicon.png" rel="apple-touch-icon">
 
   <!-- Custom fonts for this template-->
   <!-- <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->

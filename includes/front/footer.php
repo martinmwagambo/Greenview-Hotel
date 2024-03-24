@@ -7,7 +7,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>GreenView Hotel</h3>
+            <h3>Mansoor Cafe</h3>
             <p>Prices may be subject to applicable taxes and charges and may also change without prior notice. Please check prices on the website before ordering.</p>
           </div>
 
@@ -26,8 +26,8 @@
             <h4 class="footer-h4">Contact Us</h4>
             <p>
               Roasters, Garden Estate Rd<br> Opp Roasters inn, Nairobi<br>Kenya<br>
-              <strong>Phone:</strong>  0792758106<br>
-              <strong>Email:</strong> restaurant@greenview.com<br>
+              <strong>Phone:</strong>  0726334837<br>
+              <strong>Email:</strong> cafe@mansoor.com<br>
             </p>
 
             <div class="social-links">
@@ -54,7 +54,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>GreenView Hotel</strong>. All Rights Reserved
+        &copy; Copyright <strong>Mansoor Cafe</strong>. All Rights Reserved
       </div>
       <div class="credits">
 
