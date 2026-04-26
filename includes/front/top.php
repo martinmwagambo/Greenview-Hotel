@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>GreenView Hotel</title>
+	<title>Mansoor Cafe</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<!-- <meta content="" name="BigFish Restaurant Nairobi Kenya"> -->
 	<meta content="" name="Online Food Order Processing Website for Greenview Restaurant Nairobi">
 
 	<!-- Favicons -->
-	<link href="img/logo/gvbg3.png" rel="icon">
-	<link href="img/logo/gvbg3.png" rel="apple-touch-icon">
+	<link href="../../img/favicon.png" rel="icon">
+	<link href="../../img/favicon.png" rel="apple-touch-icon">
 
 	<!-- Google Fonts -->
 	<link href="css/fonts.css" rel="stylesheet">

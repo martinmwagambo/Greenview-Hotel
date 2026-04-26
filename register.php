@@ -5,13 +5,13 @@ isset($_SESSION['CUSTOMER']) ? redirect("index") : 0;
 <html lang="en">
 
 <head>
-	<title>GreenView Hotel - Create Account</title>
+	<title>Mansoor Cafe - Create Account</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Google Fonts -->
 	<link href="css/fonts.css" rel="stylesheet">
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="img/logo/gvbg3.png" />
+	<link rel="icon" type="image/png" href="img/favicon.png" />
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -135,10 +135,10 @@ isset($_SESSION['CUSTOMER']) ? redirect("index") : 0;
 					})();
 				</script>
 
-				<div class="login100-more" style="background-image: url('img/logo/gvbg2.png');">
+				<div class="login100-more" style="background-image: url('img/login.jpg');">
 					<div id="header">
 						<div id="logo" class="pull-left">
-							<h1><a href="index#intro" class="scrollto">GreenView Hotel</a></h1>
+							<h1><a href="index#intro" class="scrollto">Mansoor Cafe</a></h1>
 							<!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
 						</div>
 					</div>

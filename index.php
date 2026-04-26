@@ -144,7 +144,7 @@ include("includes/front/top.php");
 						<div class="contact-phone">
 							<i class="ion-ios-telephone-outline"></i>
 							<h3>Phone Number</h3>
-							<p><a href="tel:+91824 2262593">0792758106</a></p>
+							<p><a href="tel:+91824 2262593">0726334837</a></p>
 						</div>
 					</div>
 
@@ -152,7 +152,7 @@ include("includes/front/top.php");
 						<div class="contact-email">
 							<i class="ion-ios-email-outline"></i>
 							<h3>Email</h3>
-							<p><a href="mailto:info@example.com">restaurant@greenviewhotel.com</a></p>
+							<p><a href="mailto:info@example.com">cafe@mansoor.com</a></p>
 						</div>
 					</div>
 

@@ -5,7 +5,7 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">GreenView Hotel</a></h1>
+        <h1><a href="#intro" class="scrollto">Mansoor Cafe</a></h1>
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
 
