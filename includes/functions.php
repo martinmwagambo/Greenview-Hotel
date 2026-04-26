@@ -237,10 +237,11 @@ class customer
 			redirect("notfound");
 		}
 	}
-
-	public function register_account()		//http://localhost/swadesh/register
-	{
-		// $this->flag = 0;
+	public function register_account() {
+		// Enable error reporting
+		error_reporting(E_ALL);
+		ini_set('display_errors', 1);
+	
 		if (isset($_POST['register_submit']) && !isset($_GET['s'])) {
 			$pass = md5($this->con->escape($_POST['pass']));
 			$pass_confirm = md5($this->con->escape($_POST['pass_confirm']));
@@ -248,49 +249,66 @@ class customer
 				$this->fname = $this->con->escape(clear_input($_POST['fname']));
 				$this->lname = $this->con->escape(clear_input($_POST['lname']));
 				$this->email = $this->con->escape(clear_input($_POST['email']));
-				$str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';		//generate verify key
-				$verify_key = substr(str_shuffle($str_result), 0, 20); 		//generate verify key
-
-				$this->sql = "INSERT INTO `login_info` (`email`, `password`, `date_added`) VALUES (?, ?, ?)";
+	
+				// Check if email already exists
+				$existing_email_query = $this->con->prepare("SELECT COUNT(*) FROM `customers` WHERE `email` = ?");
+				mysqli_stmt_bind_param($existing_email_query, "s", $this->email);
+				mysqli_stmt_execute($existing_email_query);
+				mysqli_stmt_bind_result($existing_email_query, $count);
+				mysqli_stmt_fetch($existing_email_query);
+				mysqli_stmt_close($existing_email_query);
+	
+				if ($count > 0) {
+					setMessage("This email ID is already registered with us. Please use a different email ID.");
+					return; // Stop further execution
+				}
+	
+				// Continue with registration if email is unique
+				$str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+				$verify_key = substr(str_shuffle($str_result), 0, 20);
+	
+				$this->sql = "INSERT INTO `login_info` (`email`, `password`, `date_added`) VALUES (?, ?, NOW())";
 				$this->send_query = $this->con->prepare($this->sql);
-				mysqli_stmt_bind_param($this->send_query, "sss", $this->email, $pass, $this->datetime);
-
-				$sql2 = "INSERT INTO `customers` (`first_name`, `last_name`, `email`, `login_access`, `verify_key`, `isVerified`) VALUES (?, ?, ?, ?, ?, ?)";
-				$this->temp = 0;	//LOGIN ACCESS
+				mysqli_stmt_bind_param($this->send_query, "ss", $this->email, $pass);
+	
+				$sql2 = "INSERT INTO `customers` (`first_name`, `last_name`, `email`, `login_access`, `verify_key`, `isVerified`) VALUES (?, ?, ?, 0, ?, 0)";
 				$send_query2 = $this->con->prepare($sql2);
-				mysqli_stmt_bind_param($send_query2, "sssisi", $this->fname, $this->lname, $this->email, $this->temp, $verify_key, $this->temp);
-
-				if (isset($this->send_query) && isset($send_query2)) {
+				mysqli_stmt_bind_param($send_query2, "ssss", $this->fname, $this->lname, $this->email, $verify_key);
+	
+				if ($this->send_query && $send_query2) {
 					if (mysqli_stmt_execute($this->send_query) && mysqli_stmt_execute($send_query2)) {
 						if ($this->verify_email_register($this->email, $this->fname, $this->lname, $verify_key)) {
 							mysqli_stmt_close($this->send_query);
 							mysqli_stmt_close($send_query2);
 							redirect("register?s=1&cid=" . base64_encode($this->con->last_id()));
 						} else {
-							mysqli_stmt_close($this->send_query);
-							mysqli_stmt_close($send_query2);
 							setMessage("Could not send verification email. Please check your internet connection.");
 						}
-						
 					} else {
-						mysqli_stmt_close($this->send_query);
-						mysqli_stmt_close($send_query2);
-						setMessage("This email ID is already regstered with us. Please use a different email ID. Or <a href='register?resend=" . base64_encode($this->email) . "&s=1'>Click here</a> to resend the verification email");
+						setMessage("Error occurred during registration. Please try again later.");
 					}
+				} else {
+					setMessage("Error in preparing SQL statements.");
 				}
 			} else {
 				setMessage("The passwords don't match.");
 			}
 		}
 	}
-
+	
 	public function verify_email_register(&$email, &$fname, &$lname, &$verify_key)		//CALLED IN THE PREVIOUS FUNCTION
 	{
 		$mail = new PHPMailer;
 		$mail->isSMTP();
-		// $mail->SMTPDebug = 2;
+		$mail->SMTPDebug = 2; // Enable debug output to see SMTP errors
 
 		$config = parse_ini_file('includes/config.ini', true);
+
+		// Check if config was parsed correctly
+		if (!$config || !isset($config['user']) || !isset($config['pass'])) {
+			error_log("Email config error: config.ini not found or missing user/pass");
+			return 0;
+		}
 
 		$mail->Host = 'smtp.gmail.com'; // Which SMTP server to use.
 		$mail->Port = 587; // Which port to use, 587 is the default port for TLS security.
@@ -324,6 +342,8 @@ class customer
 		if ($mail->send()) {
 			return 1;
 		} else {
+			// Log the actual error for debugging
+			error_log("Email sending failed for $email. Error: " . $mail->ErrorInfo);
 			return 0;
 		}
 	}
